@@ -1,0 +1,692 @@
+@import url('menu.css');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  --font-text: 'Fira Sans', sans-serif;
+}
+
+*{
+  font-family: var(--font-text);
+}
+
+h1,h2,h3,h4{
+  text-transform: inherit;
+}
+
+.bg-black{
+  background-color: #000;
+}
+
+.normal-title{
+  font-size: 36px;
+  
+}
+
+.small-title{
+  font-size: 24px;
+}
+
+.normal-text{
+  font-size: 16px;
+  font-family: var(--font-text);
+}
+
+.text-white{
+  color: #fff;
+}
+
+.text-bold{
+  font-weight: bolder;
+}
+
+.text-light{
+  font-weight: lighter;
+}
+
+.moldura-rounded {
+  border: 1px solid;
+  display: inline-block;
+  border-radius: 25px;
+  padding: .5rem 1rem;
+}
+
+.moldura-white {
+  border-color: #fff;
+  background-color: rgba(255,255,255,.3);
+}
+
+.button-primary{
+  padding: 10px 30px;
+  border: 1px solid;
+  display: inline-block;
+  font-family: var(--font-text);
+  font-size: 16px;
+}
+
+.button-white{
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
+  transition: .2s all;
+}
+
+.button-white:hover{
+  color: #fff;
+  background-color: transparent;
+  transition: .2s all;
+}
+
+.button-border{
+  border: 1px solid #000;
+  transition: .2s all;
+  color: #000;
+}
+
+.button-border:hover{
+  background-color: #000;
+  color: #fff;
+  transition: .2s all;
+}
+
+.button-border--white{
+  border-color: #fff;
+  transition: .2s all;
+  color: #fff;
+}
+
+.button-border--white:hover{
+  background-color: #fff;
+  color: #000;
+  transition: .2s all;
+}
+
+.button-rounded{
+  border-radius: 25px;
+}
+
+.hero-banner{
+  background: linear-gradient(89.93deg, #2F2F2F 0.48%, #000000 99.42%);
+  height: calc(100vh - 100px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.hero-banner:before, .planos-luxo:before,
+.sobre-planos:before {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: #171717;
+  bottom: -34px;
+  left: 50%;
+  z-index: -1;
+  transform: rotate(45deg) translateX(-50%);
+  border-radius: 3px;
+}
+
+.hero-banner_holder .title-container {
+  margin: 1.5rem 0 3rem;
+}
+
+.hero-banner_holder .title-container h2 {
+  margin-top: 1rem;
+}
+
+.hero-banner--image {
+  display: none;
+}
+
+.transporte-executivo--item .text-container {
+  margin: 3rem 0;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.dots__item {
+  width: 12px;
+  height: 12px;
+  border-radius: 25px;
+  margin-right: 5px;
+}
+
+.dots__item:last-child{
+  margin-left: 0;
+}
+
+.planos-luxo_holder {
+  grid-template-columns: 100%;
+}
+
+.planos-luxo-siema--item .text-container {
+  margin: 4rem 0;
+}
+
+.planos-luxo{
+  background: linear-gradient(89.93deg, #2F2F2F 0.48%, #000000 99.42%);
+  position: relative;
+  padding: 4rem 0;
+  box-sizing: border-box;
+}
+
+.plano-luxo--image {
+  margin-top: 4rem;
+}
+
+.planos-luxo-siema--item {
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+.planos-luxo .dots__item{
+  background-color: rgba(144,144,144,.5);
+}
+
+.planos-luxo .dots__item:hover{
+  background-color: #909090;
+}
+
+.planos-luxo .dots__item--active{
+  background-color: #fff;
+}
+
+.transporte-executivo {
+  padding: 4rem 0;
+}
+
+.depoimentos {
+  padding: 4rem 0;
+}
+
+.depoimento--item .title-container {
+  margin-bottom: 2rem;
+}
+
+.depoimento--item {
+  box-sizing: border-box;
+  padding: 0 2rem;
+}
+
+.depoimentos .dots__item{
+  background-color: #c4c4c4;
+}
+
+.depoimentos .dots__item:hover{
+  background-color: #414141;
+}
+
+.depoimentos .dots__item--active {
+  background-color: #000;
+}
+
+.opcoes-transporte {
+  padding: 4rem 0;
+}
+
+.opcoes-transporte_holder{
+  position: relative;
+}
+
+.opcoes-tranporte-siema {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.opcoes-transporte-siema_holder{
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.opcoes-transporte_holder .arrows {
+  top: 71%;
+}
+
+.opcoes-transporte_holder .arrows-left {
+  left: 0;
+}
+
+.opcoes-transporte_holder .arrows-right {
+  right: 0;
+}
+
+.opcoes-transporte-siema_holder .title-container{
+  margin-top: 1rem;
+}
+
+.servicos {
+  padding: 4rem 0;
+}
+
+.servicos_holder .title-container {
+  margin-bottom: 2rem;
+}
+
+.footer-top_holder {
+  padding: 4rem 0;
+}
+
+.footer-top--item:first-child {
+  display: none;
+}
+
+.footer-top--item .text-container {
+  margin: 4rem 0;
+  border-left: 2px solid #fff;
+  padding-left: 2rem;
+}
+
+.footer-copy {
+  margin-top: 3rem;
+}
+
+.arrows{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.arrows-left{
+  left: .5rem;
+}
+
+.arrows-right{
+  right: .5rem;
+}
+
+.slides{
+  padding: 4rem 0;
+  position: relative;
+}
+
+.slides-container {
+  position: relative;
+}
+
+.slide-siema--item img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides-container .dots {
+  position: absolute;
+  bottom: 1rem;
+  z-index: 5;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.slides-container .dots__item{
+  background-color: rgba(144,144,144,.5);
+}
+
+.slides-container .dots__item:hover{
+  background-color: #909090;
+}
+
+.slides-container .dots__item--active{
+  background-color: #fff;
+}
+
+.sobre{
+  padding: 4rem 0;
+}
+
+.sobre--item .text-container {
+  margin-top: 3rem;
+}
+
+.car-delux {
+  background: linear-gradient(89.93deg, #2F2F2F 0.48%, #000 99.42%);
+  position: relative;
+  padding: 4rem 0;
+  box-sizing: border-box;
+}
+
+.pacotes {
+  padding: 4rem 0;
+}
+
+.pacotes .title-container{
+  margin-bottom: 4rem;
+}
+
+.pacotes .title-container .small-title{
+  font-weight: 300;
+}
+
+.pacotes_holder {
+  grid-gap: 3rem;
+}
+
+.pacotes--item {
+  position: relative;
+}
+
+.pacotes--item:hover {
+  filter: drop-shadow(2px 9px 6px rgba(0,0,0,.5));
+}
+
+.pacotes--item img {
+  border-radius: 10px;
+}
+
+.pacotes_info {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.pacotes_info h2{
+  margin-bottom: 1rem;
+}
+
+.planos {
+  padding: 4rem 0;
+}
+
+.planos--item .title-container {
+  margin-bottom: 4rem;
+}
+
+.categoria-veiculos {
+  padding: 4rem 0;
+}
+
+.categoria-veiculos .title-container{
+  margin-bottom: 4rem;
+}
+
+.categoria-veiculos .title-container .small-title{
+  font-weight: 300;
+}
+
+.categoria-veiculos_holder {
+  grid-gap: 2rem;
+}
+
+.categoria-veiculos-item {
+  border-radius: 10px;
+  background: #fff;
+  filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.15));
+  flex-wrap: wrap;
+}
+
+.categoria-veiculos-item img {
+  border-radius: 10px 10px 0 0;
+}
+
+.categoria-veiculos_info{
+  padding: 2rem;
+}
+
+.categoria-veiculos_info .marcas-veiculos {
+  margin-top: 1rem;
+}
+
+.categoria-veiculos .tipo-veiculo, .categoria-veiculos_info .marcas-veiculos .normal-text{
+  font-weight: 300;
+}
+
+.sobre-planos {
+  padding: 4rem 0;
+  box-sizing: border-box;
+  background: linear-gradient(89.93deg, #2F2F2F 0.48%, #000000 99.42%);
+  position: relative;
+}
+
+.sobre-planos_holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-planos_holder .title-container .small-title{
+  font-weight: 300;
+}
+
+.sobre-planos_holder .text-container {
+  margin: 4rem 0;
+}
+
+.vantagens-inclusos {
+  padding: 4rem 0;
+}
+
+.vantagens-inclusos_holder {
+  grid-gap: 4rem;
+}
+
+.vantagens-inclusos .title-container {
+  margin-bottom: 2rem;
+}
+
+.vantagens-inclusos .title-container .small-title {
+  font-weight: 300;
+}
+
+.opcionais-planos {
+  padding-bottom: 4rem;
+}
+
+.opcionais-planos_holder {
+  grid-row-gap: 3rem;
+}
+
+.opcionais-planos_info {
+  padding: 0 2rem;
+}
+
+.opcionais-planos_info h4 {
+  font-weight: 300;
+}
+
+.opcionais-planos_container .title-container {
+  margin-bottom: 3rem;
+}
+
+.opcionais-planos_container .title-container .small-title {
+  font-weight: 300;
+}
+
+.contato {
+  background: linear-gradient(89.93deg, #2F2F2F 0.48%, #000 99.42%);
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.info-contato {
+  margin-top: 3rem;
+}
+
+.contato_holder {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.contato_holder .button-primary {
+  margin-bottom: 1rem;
+}
+
+.contato_holder .button-primary:last-child {
+  margin: 0;
+}
+
+.contato_container .title-container .small-title,
+.contato_container .info-contato .small-title:last-child{
+  font-weight: 300;
+}
+
+.social-widget {
+  position: fixed;
+  top: 64%;
+  left: 3px;
+  z-index: 3;
+}
+
+.social-widget a{
+  color: #8E8E8E;
+  font-size: 18px;
+}
+
+.social-widget a:hover{
+  color: #D1BB8E;
+}
+
+.social-widget_holder {
+  text-align: center;
+}
+
+@media(max-width: 900px){
+  .social-widget{
+    display: none;
+  }
+
+  footer .social-widget{
+    display: block;
+    position: relative;
+    top: initial;
+    left: initial;
+    margin-top: 3rem;
+  }
+
+  footer .social-widget_holder{
+    display: flex;
+  }
+
+  .social-widget a {
+    color: #fff;
+    font-size: 21px;
+  }
+
+}
+
+@media(min-width: 1025px){
+  .hero-banner{
+    height: 725px;
+  }
+
+  .hero-banner--image {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -110px;
+  }
+
+  .transporte-executivo_holder {
+    align-items: center;
+  }
+
+  .planos-luxo_holder {
+    grid-template-columns: 50% 1fr;
+    align-items: center;
+  }
+
+  .planos-luxo-siema--item {
+    box-sizing: border-box;
+    padding: 0 2rem;
+  }
+
+  .plano-luxo--image{
+    margin: 0;
+    float: right;
+  }
+
+  .plano-luxo--image img {
+    transform: translateY(125px);
+  }
+
+  .depoimentos_holder {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .opcoes-transporte_holder {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .opcoes-tranporte-siema {
+    max-width: 80%;
+  }
+
+  .opcoes-transporte_holder .arrows {
+    top: 63%;
+  }
+
+  .footer-top_holder {
+    align-items: center;
+    grid-gap: 4rem;
+    padding: 0;
+  }
+
+  .car-delux_holder {
+    align-items: center;
+  }
+
+  .planos_holder.grids {
+    align-items: center;
+  }
+
+  .categoria-veiculos-item{
+    flex-wrap: nowrap;
+  }
+
+  .categoria-veiculos-item img {
+    border-radius: 10px 0 0 10px;
+    max-width: 194px;
+  }
+
+  .sobre-planos_holder {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .arrows-left{
+    left: 2rem;
+  }
+
+  .arrows-right{
+    right: 2rem;
+  }
+
+  .footer-top--item:first-child{
+    display: block;
+  }
+
+  .social-widget {
+    top: 505px;
+    left: calc(100vw / 2 - 650px);
+  }
+
+  footer .social-widget{
+    display: none;
+  }
+
+}

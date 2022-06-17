@@ -1,0 +1,91 @@
+/*
+Theme Name: Car Delux
+Theme URI: https://www.cardeluxe.com.br/
+Description: Tema criado para Car Deluxe
+Author: Leonardo Pang
+Version: 1.0.0
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grids {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.two_grids,
+.three_grids,
+.four_grids,
+.five_grids {
+  grid-template-columns: 1fr;
+}
+
+.flex_item {
+  display: flex;
+  align-items: center;
+}
+
+.container-wrap {
+  padding: 0 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.half-container--left,
+.half-container--right {
+  padding: 0 2rem;
+}
+
+@media(min-width: 1024px) {
+
+  .main_container {
+    position: relative;
+  }
+
+  .two_grids {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .three_grids {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .four_grids {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .five_grids {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .container-wrap {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .half-container {
+    max-width: 600px;
+  }
+
+  .half-container--left {
+    margin: 0 0 0 auto;
+    padding: 0;
+  }
+
+}
