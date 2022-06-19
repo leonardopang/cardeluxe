@@ -1,0 +1,24 @@
+.header-mobile {
+  background-color: #fff;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+@media(min-width: $container-desktop-sm) {
+
+  .header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  .header-mobile {
+    display: none;
+  }
+
+}

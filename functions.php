@@ -1,18 +1,23 @@
 <?php
 function link_css(){
-  wp_enqueue_style('bridge-childstyle', get_stylesheet_directory_uri() . '/style.css');
-  wp_enqueue_style('childstyle', get_stylesheet_directory_uri() . '/assets/css/style.main.css');
+  wp_enqueue_style('cardeluxe-style', get_stylesheet_directory_uri() . '/style.css');
+
+  wp_enqueue_style('cardeluxe-style-main', get_stylesheet_directory_uri() . '/assets/css/style.main.css');
+
+  wp_enqueue_style('cardeluxe-main-style', get_stylesheet_directory_uri() . '/assets/css/main.css');
 }
 add_action('wp_enqueue_scripts', 'link_css', 11);
 
 function wp_custom_script()
 {
-  wp_register_script('siema-js', get_stylesheet_directory_uri() . '/assets/js/siema.min.js', array(), false, false);
-  wp_register_script('siema-arrows', get_stylesheet_directory_uri() . '/assets/js/siema-dots.js', array('siema-js'), false, true);
-  wp_register_script('depoimento', get_stylesheet_directory_uri() . '/assets/js/depoimento.js', array('siema-arrows'), false, true);
+  wp_register_script('siema-js', get_stylesheet_directory_uri() . '/assets/js/single/siema.min.js', array(), false, false);
+  wp_register_script('siema-arrows', get_stylesheet_directory_uri() . '/assets/js/single/siema-dots.js', array('siema-js'), false, true);
+  wp_register_script('depoimento', get_stylesheet_directory_uri() . '/assets/js/modules/depoimento.js', array('siema-arrows'), false, true);
   wp_enqueue_script('depoimento');
 
   wp_enqueue_script('FontAwesome', 'https://kit.fontawesome.com/9dd9385575.js', array(), false, false);
+
+  wp_enqueue_script('index-main', get_stylesheet_directory_uri() . '/assets/js/index.js', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'wp_custom_script', 10);
 
@@ -45,31 +50,31 @@ function accordion(){
     while( have_rows('accordion') ) :
       the_row(); 
       ?>
-      <div class="duvidas-accordion">
-        <div class="title-container">
-          <h3 class="super-text text-green"><?php the_sub_field('titulo_accordion'); ?></h3>
-        </div><?php
+<div class="duvidas-accordion">
+  <div class="title-container">
+    <h3 class="super-text text-green"><?php the_sub_field('titulo_accordion'); ?></h3>
+  </div><?php
         if( have_rows('conteudo') ) :
           while( have_rows('conteudo') ) :
             the_row(); ?>
-            <div class="duvidas-accordion_holder"><?php
+  <div class="duvidas-accordion_holder"><?php
               if( get_row_layout() == 'text_container' ) : ?>
-                <div class="normal-text text-container">
-                  <?php the_sub_field('texto'); ?>
-                </div><?php
+    <div class="normal-text text-container">
+      <?php the_sub_field('texto'); ?>
+    </div><?php
               elseif( get_row_layout() == 'imagem_container' ) : ?>
-                <div class="imagem-container">
-                  <img src="<?php the_sub_field('imagem'); ?>" alt="">
-                </div><?php
+    <div class="imagem-container">
+      <img src="<?php the_sub_field('imagem'); ?>" alt="">
+    </div><?php
               elseif( get_row_layout() == 'titulo_container' ) : ?>
-                <div class="title-container">
-                  <h2 class="small-title"><?php the_sub_field('text') ?></h2>
-                </div><?php
+    <div class="title-container">
+      <h2 class="small-title"><?php the_sub_field('text') ?></h2>
+    </div><?php
               endif; ?>
-            </div><?php
+  </div><?php
           endwhile;
         endif; ?>
-      </div> <?php
+</div> <?php
     endwhile;
     wp_reset_postdata();
   endif;
@@ -114,38 +119,39 @@ if (function_exists('acf_add_options_page')) {
 
 function hamburguer_menu(){
 ?>
-  <script>
-    const menu_mobile = document.querySelector('.icon-hamburguer')
-    const menu_holder = document.querySelector('.menu-mobile-nav')
+<script>
+const menu_mobile = document.querySelector('.icon-hamburguer')
+const menu_holder = document.querySelector('.menu-mobile-nav')
 
-    menu_mobile.addEventListener('click', () => {
-      menu_holder.classList.toggle('active')
-    })
-  </script>
+menu_mobile.addEventListener('click', () => {
+  menu_holder.classList.toggle('active')
+})
+</script>
 <?php
 }
 add_action('wp_footer','hamburguer_menu');
 
 function hero_header(){
   ?>
-  <section class="hero-banner">
-    <div class="container-wrap">
-      <div class="hero-banner_holder">
-        <div class="moldura-rounded moldura-white">
-          <p class="normal-text text-white"><?php the_field('text_moldura'); ?></p>
-        </div>
-        <div class="title-container">
-          <h1 class="normal-title text-white text-bold"><?php the_field('titulo_hero_header'); ?></h1>
-          <h2 class="normal-title text-white text-light"><?php the_field('sub_titulo_hero_header'); ?></h2>
-        </div>
-        <a href="<?php the_field('link_hero_header'); ?>" class="button-primary button-border button-border--white button-rounded text-white">Quero viajar agora</a>
-        <div class="hero-banner--image">
-          <img src="<?php the_field('imagem_hero_header'); ?>" alt="<?php the_title(); ?>">
-        </div>
+<section class="hero-banner">
+  <div class="container-wrap">
+    <div class="hero-banner_holder">
+      <div class="moldura-rounded moldura-white">
+        <p class="normal-text text-white"><?php the_field('text_moldura'); ?></p>
+      </div>
+      <div class="title-container">
+        <h1 class="normal-title text-white text-bold"><?php the_field('titulo_hero_header'); ?></h1>
+        <h2 class="normal-title text-white text-light"><?php the_field('sub_titulo_hero_header'); ?></h2>
+      </div>
+      <a href="<?php the_field('link_hero_header'); ?>"
+        class="button-primary button-border button-border--white button-rounded text-white">Quero viajar agora</a>
+      <div class="hero-banner--image">
+        <img src="<?php the_field('imagem_hero_header'); ?>" alt="<?php the_title(); ?>">
       </div>
     </div>
-  </section>
-  <?php
+  </div>
+</section>
+<?php
 }
 
 function depoimentos(){
@@ -160,16 +166,16 @@ function depoimentos(){
     while( $depoimentos->have_posts() ) :
       $depoimentos->the_post();
   ?>
-      <div class="depoimento--item">
-        <div class="title-container">
-          <h2 class="normal-title text-bold"><?php the_title(); ?></h2>
-          <h3 class="small-title text-light"><?php the_field('sub_titulo'); ?></h3>
-        </div>
-        <div class="text-container">
-          <p class="normal-text"><?php the_field('depoimento'); ?></p>
-        </div>
-      </div>
-  <?php
+<div class="depoimento--item">
+  <div class="title-container">
+    <h2 class="normal-title text-bold"><?php the_title(); ?></h2>
+    <h3 class="small-title text-light"><?php the_field('sub_titulo'); ?></h3>
+  </div>
+  <div class="text-container">
+    <p class="normal-text"><?php the_field('depoimento'); ?></p>
+  </div>
+</div>
+<?php
     endwhile;
     wp_reset_postdata();
   endif;
@@ -186,17 +192,17 @@ function planos_home(){
     while( $planos->have_posts() ) :
       $planos->the_post();
   ?>
-      <div class="planos-luxo-siema--item">
-        <div class="title-container">
-          <h2 class="normal-title text-white text-bold"><?php the_title(); ?></h2>
-          <h3 class="small-title text-white text-light"><?php the_field('sub_titulo'); ?></h3>
-        </div>
-        <div class="text-container">
-          <p class="normal-text text-white"><?php the_field('resumo'); ?></p>
-        </div>
-        <a href="<?php the_permalink(); ?>" class="button-primary button-rounded button-white">Ver planos</a>
-      </div>
-  <?php
+<div class="planos-luxo-siema--item">
+  <div class="title-container">
+    <h2 class="normal-title text-white text-bold"><?php the_title(); ?></h2>
+    <h3 class="small-title text-white text-light"><?php the_field('sub_titulo'); ?></h3>
+  </div>
+  <div class="text-container">
+    <p class="normal-text text-white"><?php the_field('resumo'); ?></p>
+  </div>
+  <a href="<?php the_permalink(); ?>" class="button-primary button-rounded button-white">Ver planos</a>
+</div>
+<?php
     endwhile;
     wp_reset_postdata();
   endif;
@@ -213,21 +219,22 @@ function section_column($column){
 
           if( get_row_layout() == 'texto_container' ) : ?>
 
-            <div class="title-container">
-              <h2 class="normal-title text-bold"><?php the_sub_field('titulo'); ?></h2>
-              <h3 class="small-title text-light"><?php the_sub_field('sub_titulo'); ?></h3>
-            </div>
-            <div class="text-container normal-text">
-              <?php the_sub_field('texto'); ?>
-            </div>
-            <?php
+<div class="title-container">
+  <h2 class="normal-title text-bold"><?php the_sub_field('titulo'); ?></h2>
+  <h3 class="small-title text-light"><?php the_sub_field('sub_titulo'); ?></h3>
+</div>
+<div class="text-container normal-text">
+  <?php the_sub_field('texto'); ?>
+</div>
+<?php
               if( get_sub_field('button_text') ) :
             ?>
-                <a href="<?php the_sub_field('button_link'); ?>" class="button-primary button-rounded button-border"><?php the_sub_field('button_text'); ?></a><?php
+<a href="<?php the_sub_field('button_link'); ?>"
+  class="button-primary button-rounded button-border"><?php the_sub_field('button_text'); ?></a><?php
               endif;
           elseif( get_row_layout() == 'imagem_container' ) : ?>
 
-            <img src="<?php the_sub_field('imagem'); ?>" alt="<?php the_sub_field('texto_alternativo'); ?>"> <?php
+<img src="<?php the_sub_field('imagem'); ?>" alt="<?php the_sub_field('texto_alternativo'); ?>"> <?php
 
           endif;
         endwhile;
@@ -243,29 +250,29 @@ function slide_item(){
   $galeria_slides = get_field('galeria_slides');
   foreach( $galeria_slides as $image ) :
   ?>
-    <div class="slide-siema--item">
-      <img src="<?= $image ?>" alt="">
-    </div>
-  <?php
+<div class="slide-siema--item">
+  <img src="<?= $image ?>" alt="">
+</div>
+<?php
   endforeach;
 }
 
 function galeria_slides(){
   ?>
-  <section class="slides">
-    <div class="container-wrap">
-      <div class="slides-container">
-        <div class="slides_siema">
-          <?php slide_item(); ?>
-        </div>
-        <div class="arrows-container">
-          <span class="arrows arrows-left"><i class="fas fa-chevron-left text-white fa-2x"></i></span>
-          <span class="arrows arrows-right"><i class="fas fa-chevron-right text-white fa-2x"></i></span>
-        </div>
+<section class="slides">
+  <div class="container-wrap">
+    <div class="slides-container">
+      <div class="slides_siema">
+        <?php slide_item(); ?>
+      </div>
+      <div class="arrows-container">
+        <span class="arrows arrows-left"><i class="fas fa-chevron-left text-white fa-2x"></i></span>
+        <span class="arrows arrows-right"><i class="fas fa-chevron-right text-white fa-2x"></i></span>
       </div>
     </div>
-  </section>
-  <?php
+  </div>
+</section>
+<?php
 }
 
 function carros_item(){
@@ -273,14 +280,14 @@ function carros_item(){
     while( have_rows('carros_container') ) :
       the_row();
   ?>
-      <div class="opcoes-transporte-siema_holder">
-        <img src="<?php the_sub_field('thumbnail') ?>" alt="<?php the_sub_field('titulo'); ?>">
-        <div class="title-container text-center">
-          <h3 class="super-text text-bold text-white"><?php the_sub_field('nome'); ?></h3>
-          <h4 class="super-text text-light text-white"><?php the_sub_field('modelo'); ?></h4>
-        </div>
-      </div>
-  <?php
+<div class="opcoes-transporte-siema_holder">
+  <img src="<?php the_sub_field('thumbnail') ?>" alt="<?php the_sub_field('titulo'); ?>">
+  <div class="title-container text-center">
+    <h3 class="super-text text-bold text-white"><?php the_sub_field('nome'); ?></h3>
+    <h4 class="super-text text-light text-white"><?php the_sub_field('modelo'); ?></h4>
+  </div>
+</div>
+<?php
     endwhile;
     wp_reset_postdata();
   endif;
@@ -312,9 +319,9 @@ function carros_holder(){
 
 function social_widget(){
 ?>
-  <div class="social-widget"> 
-    <div class="social-widget_holder grids">
-      <?php
+<div class="social-widget">
+  <div class="social-widget_holder grids">
+    <?php
         
         if( have_rows('redes_sociais','opt-social') ) :
           while( have_rows('redes_sociais','opt-social') ) :
@@ -322,16 +329,18 @@ function social_widget(){
             if( get_row_layout() == 'select_redes_sociais') :
               $social_item = get_sub_field('lista_redes_sociais');
               if( $social_item == 'fas fa-envelope' ) :
-      ?>      <a href="mailto:<?php the_sub_field('email') ?>" class="<?php the_sub_field('lista_redes_sociais') ?> super-text"></a>
-              <?php else: ?>
-              <a href="<?php the_sub_field('link_rede_social') ?>" class="<?php the_sub_field('lista_redes_sociais') ?> super-text"></a>
-      <?php   endif;
+      ?> <a href="mailto:<?php the_sub_field('email') ?>"
+      class="<?php the_sub_field('lista_redes_sociais') ?> super-text"></a>
+    <?php else: ?>
+    <a href="<?php the_sub_field('link_rede_social') ?>"
+      class="<?php the_sub_field('lista_redes_sociais') ?> super-text"></a>
+    <?php   endif;
             endif; 
           endwhile;
         endif;
       ?>
-    </div>
   </div>
+</div>
 
 <?php
 }

@@ -1,45 +1,38 @@
-@import url('menu.css');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-:root{
+:root {
   --font-text: 'Fira Sans', sans-serif;
 }
 
-*{
+* {
   font-family: var(--font-text);
 }
 
-h1,h2,h3,h4{
-  text-transform: inherit;
-}
-
-.bg-black{
+.bg-black {
   background-color: #000;
 }
 
-.normal-title{
+.normal-title {
   font-size: 36px;
-  
+
 }
 
-.small-title{
+.small-title {
   font-size: 24px;
 }
 
-.normal-text{
+.normal-text {
   font-size: 16px;
   font-family: var(--font-text);
 }
 
-.text-white{
+.text-white {
   color: #fff;
 }
 
-.text-bold{
+.text-bold {
   font-weight: bolder;
 }
 
-.text-light{
+.text-light {
   font-weight: lighter;
 }
 
@@ -52,10 +45,10 @@ h1,h2,h3,h4{
 
 .moldura-white {
   border-color: #fff;
-  background-color: rgba(255,255,255,.3);
+  background-color: rgba(255, 255, 255, .3);
 }
 
-.button-primary{
+.button-primary {
   padding: 10px 30px;
   border: 1px solid;
   display: inline-block;
@@ -63,48 +56,48 @@ h1,h2,h3,h4{
   font-size: 16px;
 }
 
-.button-white{
+.button-white {
   color: #000;
   background-color: #fff;
   border-color: #fff;
   transition: .2s all;
 }
 
-.button-white:hover{
+.button-white:hover {
   color: #fff;
   background-color: transparent;
   transition: .2s all;
 }
 
-.button-border{
+.button-border {
   border: 1px solid #000;
   transition: .2s all;
   color: #000;
 }
 
-.button-border:hover{
+.button-border:hover {
   background-color: #000;
   color: #fff;
   transition: .2s all;
 }
 
-.button-border--white{
+.button-border--white {
   border-color: #fff;
   transition: .2s all;
   color: #fff;
 }
 
-.button-border--white:hover{
+.button-border--white:hover {
   background-color: #fff;
   color: #000;
   transition: .2s all;
 }
 
-.button-rounded{
+.button-rounded {
   border-radius: 25px;
 }
 
-.hero-banner{
+.hero-banner {
   background: linear-gradient(89.93deg, #2F2F2F 0.48%, #000000 99.42%);
   height: calc(100vh - 100px);
   position: relative;
@@ -116,7 +109,8 @@ h1,h2,h3,h4{
   position: relative;
 }
 
-.hero-banner:before, .planos-luxo:before,
+.hero-banner:before,
+.planos-luxo:before,
 .sobre-planos:before {
   content: '';
   position: absolute;
@@ -161,7 +155,7 @@ h1,h2,h3,h4{
   margin-right: 5px;
 }
 
-.dots__item:last-child{
+.dots__item:last-child {
   margin-left: 0;
 }
 
@@ -173,7 +167,7 @@ h1,h2,h3,h4{
   margin: 4rem 0;
 }
 
-.planos-luxo{
+.planos-luxo {
   background: linear-gradient(89.93deg, #2F2F2F 0.48%, #000000 99.42%);
   position: relative;
   padding: 4rem 0;
@@ -189,15 +183,15 @@ h1,h2,h3,h4{
   padding: 0 1rem;
 }
 
-.planos-luxo .dots__item{
-  background-color: rgba(144,144,144,.5);
+.planos-luxo .dots__item {
+  background-color: rgba(144, 144, 144, .5);
 }
 
-.planos-luxo .dots__item:hover{
+.planos-luxo .dots__item:hover {
   background-color: #909090;
 }
 
-.planos-luxo .dots__item--active{
+.planos-luxo .dots__item--active {
   background-color: #fff;
 }
 
@@ -218,11 +212,11 @@ h1,h2,h3,h4{
   padding: 0 2rem;
 }
 
-.depoimentos .dots__item{
+.depoimentos .dots__item {
   background-color: #c4c4c4;
 }
 
-.depoimentos .dots__item:hover{
+.depoimentos .dots__item:hover {
   background-color: #414141;
 }
 
@@ -234,7 +228,7 @@ h1,h2,h3,h4{
   padding: 4rem 0;
 }
 
-.opcoes-transporte_holder{
+.opcoes-transporte_holder {
   position: relative;
 }
 
@@ -244,7 +238,7 @@ h1,h2,h3,h4{
   margin-top: 5rem;
 }
 
-.opcoes-transporte-siema_holder{
+.opcoes-transporte-siema_holder {
   padding: 0 10px;
   box-sizing: border-box;
 }
@@ -261,7 +255,7 @@ h1,h2,h3,h4{
   right: 0;
 }
 
-.opcoes-transporte-siema_holder .title-container{
+.opcoes-transporte-siema_holder .title-container {
   margin-top: 1rem;
 }
 
@@ -291,22 +285,22 @@ h1,h2,h3,h4{
   margin-top: 3rem;
 }
 
-.arrows{
+.arrows {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
 }
 
-.arrows-left{
+.arrows-left {
   left: .5rem;
 }
 
-.arrows-right{
+.arrows-right {
   right: .5rem;
 }
 
-.slides{
+.slides {
   padding: 4rem 0;
   position: relative;
 }
@@ -329,19 +323,19 @@ h1,h2,h3,h4{
   margin: 0;
 }
 
-.slides-container .dots__item{
-  background-color: rgba(144,144,144,.5);
+.slides-container .dots__item {
+  background-color: rgba(144, 144, 144, .5);
 }
 
-.slides-container .dots__item:hover{
+.slides-container .dots__item:hover {
   background-color: #909090;
 }
 
-.slides-container .dots__item--active{
+.slides-container .dots__item--active {
   background-color: #fff;
 }
 
-.sobre{
+.sobre {
   padding: 4rem 0;
 }
 
@@ -360,11 +354,11 @@ h1,h2,h3,h4{
   padding: 4rem 0;
 }
 
-.pacotes .title-container{
+.pacotes .title-container {
   margin-bottom: 4rem;
 }
 
-.pacotes .title-container .small-title{
+.pacotes .title-container .small-title {
   font-weight: 300;
 }
 
@@ -377,7 +371,7 @@ h1,h2,h3,h4{
 }
 
 .pacotes--item:hover {
-  filter: drop-shadow(2px 9px 6px rgba(0,0,0,.5));
+  filter: drop-shadow(2px 9px 6px rgba(0, 0, 0, .5));
 }
 
 .pacotes--item img {
@@ -396,7 +390,7 @@ h1,h2,h3,h4{
   justify-content: flex-end;
 }
 
-.pacotes_info h2{
+.pacotes_info h2 {
   margin-bottom: 1rem;
 }
 
@@ -412,11 +406,11 @@ h1,h2,h3,h4{
   padding: 4rem 0;
 }
 
-.categoria-veiculos .title-container{
+.categoria-veiculos .title-container {
   margin-bottom: 4rem;
 }
 
-.categoria-veiculos .title-container .small-title{
+.categoria-veiculos .title-container .small-title {
   font-weight: 300;
 }
 
@@ -435,7 +429,7 @@ h1,h2,h3,h4{
   border-radius: 10px 10px 0 0;
 }
 
-.categoria-veiculos_info{
+.categoria-veiculos_info {
   padding: 2rem;
 }
 
@@ -443,7 +437,8 @@ h1,h2,h3,h4{
   margin-top: 1rem;
 }
 
-.categoria-veiculos .tipo-veiculo, .categoria-veiculos_info .marcas-veiculos .normal-text{
+.categoria-veiculos .tipo-veiculo,
+.categoria-veiculos_info .marcas-veiculos .normal-text {
   font-weight: 300;
 }
 
@@ -461,7 +456,7 @@ h1,h2,h3,h4{
   justify-content: center;
 }
 
-.sobre-planos_holder .title-container .small-title{
+.sobre-planos_holder .title-container .small-title {
   font-weight: 300;
 }
 
@@ -538,7 +533,7 @@ h1,h2,h3,h4{
 }
 
 .contato_container .title-container .small-title,
-.contato_container .info-contato .small-title:last-child{
+.contato_container .info-contato .small-title:last-child {
   font-weight: 300;
 }
 
@@ -549,12 +544,12 @@ h1,h2,h3,h4{
   z-index: 3;
 }
 
-.social-widget a{
+.social-widget a {
   color: #8E8E8E;
   font-size: 18px;
 }
 
-.social-widget a:hover{
+.social-widget a:hover {
   color: #D1BB8E;
 }
 
@@ -562,12 +557,12 @@ h1,h2,h3,h4{
   text-align: center;
 }
 
-@media(max-width: 900px){
-  .social-widget{
+@media(max-width: 900px) {
+  .social-widget {
     display: none;
   }
 
-  footer .social-widget{
+  footer .social-widget {
     display: block;
     position: relative;
     top: initial;
@@ -575,7 +570,7 @@ h1,h2,h3,h4{
     margin-top: 3rem;
   }
 
-  footer .social-widget_holder{
+  footer .social-widget_holder {
     display: flex;
   }
 
@@ -586,8 +581,8 @@ h1,h2,h3,h4{
 
 }
 
-@media(min-width: 1025px){
-  .hero-banner{
+@media(min-width: 1025px) {
+  .hero-banner {
     height: 725px;
   }
 
@@ -612,7 +607,7 @@ h1,h2,h3,h4{
     padding: 0 2rem;
   }
 
-  .plano-luxo--image{
+  .plano-luxo--image {
     margin: 0;
     float: right;
   }
@@ -654,7 +649,7 @@ h1,h2,h3,h4{
     align-items: center;
   }
 
-  .categoria-veiculos-item{
+  .categoria-veiculos-item {
     flex-wrap: nowrap;
   }
 
@@ -668,15 +663,15 @@ h1,h2,h3,h4{
     margin: 0 auto;
   }
 
-  .arrows-left{
+  .arrows-left {
     left: 2rem;
   }
 
-  .arrows-right{
+  .arrows-right {
     right: 2rem;
   }
 
-  .footer-top--item:first-child{
+  .footer-top--item:first-child {
     display: block;
   }
 
@@ -685,7 +680,7 @@ h1,h2,h3,h4{
     left: calc(100vw / 2 - 650px);
   }
 
-  footer .social-widget{
+  footer .social-widget {
     display: none;
   }
 
